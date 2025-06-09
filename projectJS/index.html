@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone Book</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Phone Book</h1>
+  </header>
+
+
+  <main>
+    <div class="container">
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search contacts..." />
+        <div class="buttons">
+          <button id="addContactBtn" title="Add Contact">➕</button>
+          <button id="deleteAllBtn" title="Delete All">🗑️</button>
+        </div>
+      </div>
+
+      <ul class="contact-list">
+        <li class="contact-card">
+          <img src="images/person1.jpg" alt="Ben Salomon" title="avatar" class="avatar" />
+          <span class="contactName">Ben Salomon</span>
+          <div class="actions">
+            <button title="Show Details" class="show-details">ℹ️</button>
+            <button title="Edit Contact" class="edit-contact">✏️</button>
+            <button title="Delete Contact" class="delete-contact">🗑️</button>
+          </div>
+        </li>
+
+        <li class="contact-card">
+          <img src="images/person2.jpg" alt="Meitav Itah" title="avatar" class="avatar" />
+          <span class="contactName">Meitav Itah</span>
+          <div class="actions">
+            <button title="Show Details" class="show-details">ℹ️</button>
+            <button title="Edit Contact" class="edit-contact">✏️</button>
+            <button title="Delete Contact" class="delete-contact">🗑️</button>
+          </div>
+        </li>
+
+        <li class="contact-card">
+          <img src="images/person3.jpg" alt="Rinat Bar" title="avatar" class="avatar" />
+          <span class="contactName">Rinat Bar</span>
+          <div class="actions">
+            <button title="Show Details" class="show-details">ℹ️</button>
+            <button title="Edit Contact" class="edit-contact">✏️</button>
+            <button title="Delete Contact" class="delete-contact">🗑️</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <span>&copy; 2025 Meitav Itah & Ben Salomon</span>
+  </footer>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
