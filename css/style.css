@@ -80,15 +80,47 @@ main {
   background-color: #7091fd;
 }
 
-.popup input,
-.popup textarea {
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+  height: 100%;
+  background-color: rgba(101, 110, 237, 0.5);
+  display: none; 
 }
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.5);
+}
+
 
 .contacts{
   display: flex;
