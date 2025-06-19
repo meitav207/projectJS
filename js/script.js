@@ -52,16 +52,19 @@ contacts.forEach((elem,index)=>{
   const infoContact = document.createElement('button');
   infoContact.className="infoDetail";
   infoContact.alt="info";
+  infoContact.title="contactInfo";
   infoContact.textContent = "ℹ️";
 
   const editContact = document.createElement('button');
   editContact.className="editContact";
   editContact.alt="edit";
+  editContact.title="editContact";
   editContact.textContent = "✏️";
 
   const deleteContact = document.createElement('button');
   deleteContact.className = "deleteContact";
   deleteContact.alt="delete";
+  deleteContact.title="deleteContact";
   deleteContact.textContent = "🗑️";
 
   actions.append(infoContact,editContact,deleteContact)
