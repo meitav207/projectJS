@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone Book</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Header  -->
+  <header>
+    <h1><a href="index.html">Phone Book</a></h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="aboutus.html">About Us</a> |
+      <a href="contactus.html">Contact Us</a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <!--search bar and action buttons -->
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search contacts..." />
+        <div class="buttons">
+          <button id="addContactBtn" title="Add Contact">➕</button>
+          <button id="deleteAllBtn" title="Delete All">🗑️</button>
+        </div>
+      </div>
+
+      <!-- Contact list will be refreshed here -->
+      <ul class="contacts">
+        
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2025 Meitav Itah & Ben Salomon <br>All Right Reserved</span>
+  </footer>
+
+  <!-- Popup for viewing contact details -->
+   <div class="popup" id="contactDetailsPopup" style="display: none;">
+      <div class="popup-content">
+        <button class="close-btn" id="closeDetailsBtn" title="Close">×</button>
+        <h2 id="popupName"></h2>
+        <p><strong>Phone:</strong>   <span id="popupPhone"></span></p>
+        <p><strong>Email:</strong>   <span id="popupEmail"></span></p>
+        <p><strong>Address:</strong> <span id="popupAddress"></span></p>
+        <p><strong>Notes:</strong>   <span id="popupNotes"></span></p>
+      </div>
+    </div> 
+    
+    <!-- Popup for adding a new contact -->
+    <div class="popup" id="addContactPopUp" style="display: none;">
+      <div class="popup-content">
+        <button class="close-btn" id="closeAddContactPopUp" title="Close">×</button>
+        <p><strong>Name: <input placeholder="Name..." type="text" id="addName" > </strong></p>
+        <p><strong>Phone:</strong> <input placeholder="Phone..." type="text" id="addPhone" >   </p>
+        <p><strong>Email:</strong>  <input placeholder="Email..." type="email"  name="email" id="addEmail" >  </p>
+        <p><strong>Address:</strong> <input placeholder="Address..." type="text" id="addAddress" > </p>
+        <p><strong>Notes:</strong>   <input placeholder="Notes..." type="text" id="addNotes" > </p>
+        <p><strong>Image Link: <input placeholder=" Image link..." type="text" id="addImageLink" > </strong></p>
+        <button class="saveBtn" id="save" title="SaveButton">Save</button>
+      </div>
+    </div> 
+    
+    <!-- Popup for editing a contact -->
+    <div class="popup" id="editContactPopUp" style="display: none;">
+  <div class="popup-content">
+    <button class="close-btn" id="closeEditContactPopUp" title="Close">×</button>
+    <p><strong>Name: <input placeholder="Name..." type="text" id="editName" > </strong></p>
+    <p><strong>Phone:</strong> <input placeholder="Phone..." type="text" id="editPhone" >   </p>
+    <p><strong>Email:</strong>  <input placeholder="Email..." type="email"  name="email" id="editEmail" >  </p>
+    <p><strong>Address:</strong> <input placeholder="Address..." type="text" id="editAddress" > </p>
+    <p><strong>Notes:</strong>   <input placeholder="Notes..." type="text" id="editNotes" > </p>
+    <p><strong>Image Link: <input placeholder=" Image link..." type="text" id="editImageLink" > </strong></p>
+    <button class="saveBtn" id="saveEdit" title="SaveEditButton">Save</button>
+  </div>
+</div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
