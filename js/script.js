@@ -42,14 +42,14 @@ const contactList = document.querySelector('.contacts'); // Contact list contain
 buildContactList();
 //#region Refresh Contacts List
 // Refresh the contact list 
-function buildContactList() {
+function buildContactList(list = contacts) {
   contactList.innerHTML = '';
   // Always sort: favorites first, then A-Z
-  const list = (contacts).slice().sort((a, b) => {
-    if (b.favorite - a.favorite !== 0) return b.favorite - a.favorite;
+  const sortedList = list.slice().sort((a, b) => {
+    if ((b.favorite ? 1 : 0) - (a.favorite ? 1 : 0) !== 0) return (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0);
     return a.name.localeCompare(b.name);
   });
-  list.forEach((elem, index) => {
+  sortedList.forEach((elem) => {
     const contact = document.createElement('li');
     contact.className = "contact";
     contact.setAttribute('data-id', contacts.indexOf(elem));
@@ -58,7 +58,7 @@ function buildContactList() {
     contactImg.className = "avatarImg";
     contactImg.src = elem.Image;
     contactImg.title = elem.name;
-    contactImg.alt = "contact pic" + (index + 1);
+    contactImg.alt = "contact pic";
 
     const contactName = document.createElement('span');
     contactName.className = "contactName";
@@ -276,7 +276,7 @@ document.getElementById('save').addEventListener('click', function () {
 });
 //#endregion
 
-// Save edited contact changes
+//#region Save Edited Contact
 document.getElementById('saveEdit').addEventListener('click', function () {
   const id = document.getElementById('editContactPopUp').getAttribute('data-edit-id');
   if (id !== null) {
@@ -305,11 +305,6 @@ document.getElementById('saveEdit').addEventListener('click', function () {
 contacts.forEach(c => { if (typeof c.favorite === 'undefined') c.favorite = false; });
 //#endregion
 
-//#region Initial refresh
-// Initial refresh of all contacts
-buildContactList();
-//#endregion
-
 //#region Search 
 // Search input 
 document.getElementById('searchInput').addEventListener('input', function () {
@@ -321,6 +316,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
     buildContactList(filtered);
   }
 });
+
 //#endregion
 
 //#region Delete All Contacts
