@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* Body layout and background */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, #dbeafe, #f8fafc);
@@ -14,17 +15,24 @@ body {
   flex-direction: column;
 }
 
+/* Header and footer */
 header,
 footer {
   width: 100%;
   padding: 1rem;
-  background-color: #0d09ec;
+  background-color: #0d09ec; /* Main blue color */
   color: white;
   text-align: center;
   box-sizing: border-box;
   flex-shrink: 0;
 }
+header a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+/* Main content area */
 main {
   flex: 1;
   padding: 2rem;
@@ -36,6 +44,26 @@ main {
   gap: 2rem;
 }
 
+/* About Us and Contact Us sections */
+.about-us {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10%;
+ 
+}
+.contact-us {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+/*container */
 .container {
   max-width: 1000px;
   width: 100%;
@@ -43,7 +71,7 @@ main {
   padding: 0 1rem;
 }
 
-
+/* search and action buttons */
 .controls {
   display: flex;
   justify-content: space-between;
@@ -80,6 +108,7 @@ main {
   background-color: #7091fd;
 }
 
+/* Popup overlays for add,edit,view */
 .popup {
   position: fixed;
   top: 0;
@@ -104,6 +133,7 @@ main {
   text-align: left;
 }
 
+/* Close button for popups */
 .close-btn {
   position: absolute;
   top: 0.5rem;
@@ -121,7 +151,7 @@ main {
   transform: scale(1.5);
 }
 
-
+/* Contact list */
 .contacts{
   display: flex;
   flex-direction: column;
@@ -141,10 +171,6 @@ main {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.6s ease;
   width: 100%;
-}
-
-.contact:hover {
-  background-color: #bbbfc9;
 }
 
 .contactName {
@@ -188,8 +214,53 @@ main {
   color: #2563eb;
 }
 
+/* Secret Buttton */
+#greatJobBtn {
+  background: #0d09ec; /* More blue for the button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 36px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+  position: fixed;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+  margin: 0;
+  z-index: 100;
+  display: block;
+}
+#greatJobBtn:hover {
+  background: #0656f6;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+#greatJobOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  text-shadow: 2px 2px 8px #222;
+  letter-spacing: 2px;
+  border-radius: 0;
+  opacity: 1;
+}
 
-
+/* styles for mobile */
 @media (max-width: 500px) {
   .contact {
     flex-direction: column;
