@@ -105,7 +105,7 @@ main {
 }
 
 .controls .buttons button:hover {
-  background-color: #7091fd;
+  background-color: #0656f6;
 }
 
 /* Popup overlays for add,edit,view */
@@ -214,31 +214,7 @@ main {
   color: #2563eb;
 }
 
-/* Secret Buttton */
-#greatJobBtn {
-  background: #0d09ec; /* More blue for the button */
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 16px 36px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  transition: background 0.2s, box-shadow 0.2s;
-  position: fixed;
-  top: 50%;
-  left: 32px;
-  transform: translateY(-50%);
-  margin: 0;
-  z-index: 100;
-  display: block;
-}
-#greatJobBtn:hover {
-  background: #0656f6;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-}
-#greatJobOverlay {
+#secretBtnOverlay {
   position: fixed;
   top: 0;
   left: 0;

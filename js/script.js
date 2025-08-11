@@ -40,11 +40,11 @@ let contacts = [
 const contactList = document.querySelector('.contacts'); // Contact list container
 //#endregion
 buildContactList();
-//#region Refresh Contacts List
+//#region Refresh and build Contacts List
 // Refresh the contact list 
 function buildContactList(list = contacts) {
   contactList.innerHTML = '';
-  // Always sort: favorites first, then A-Z
+  // Always sort favorites first, then A-Z
   const sortedList = list.slice().sort((a, b) => {
     if ((b.favorite ? 1 : 0) - (a.favorite ? 1 : 0) !== 0) return (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0);
     return a.name.localeCompare(b.name);
@@ -300,10 +300,7 @@ document.getElementById('saveEdit').addEventListener('click', function () {
 });
 //#endregion
 
-//#region Favorite Property
-// Add a favorite property to each contact if not present
-contacts.forEach(c => { if (typeof c.favorite === 'undefined') c.favorite = false; });
-//#endregion
+
 
 //#region Search 
 // Search input 
@@ -346,31 +343,29 @@ contactList.addEventListener('mouseout', function (e) {
 //#endregion
 
 //#region Secret Button 
-const greatJobBtn = document.createElement('button');
-greatJobBtn.id = 'greatJobBtn';
-greatJobBtn.textContent = 'Click Me';
+const greatJobBtn = document.getElementById('secretBtn');
+let secretBtnOverlay = document.getElementById('secretBtnOverlay');
+if (!secretBtnOverlay) {
+  secretBtnOverlay = document.createElement('div');
+  secretBtnOverlay.id = 'secretBtnOverlay';
+  secretBtnOverlay.textContent = 'Great Job!!!';
+  secretBtnOverlay.style.display = 'none';
+  document.body.appendChild(secretBtnOverlay);
+}
 
-document.body.insertBefore(greatJobBtn, document.body.firstChild);
+if (secretBtn) {
+  secretBtn.addEventListener('click', () => {
+    secretBtnOverlay.style.display = 'flex';
+    setTimeout(() => {
+      secretBtnOverlay.style.opacity = '1';
+    }, 10);
+  });
+}
 
-// Add overlay for the message
-const greatJobOverlay = document.createElement('div');
-greatJobOverlay.id = 'greatJobOverlay';
-greatJobOverlay.textContent = 'Great Job!!!';
-greatJobOverlay.style.display = 'none';
-
-document.body.appendChild(greatJobOverlay);
-
-greatJobBtn.addEventListener('click', () => {
-  greatJobOverlay.style.display = 'flex';
+secretBtnOverlay.addEventListener('click', () => {
+  secretBtnOverlay.style.opacity = '0';
   setTimeout(() => {
-    greatJobOverlay.style.opacity = '1';
-  }, 10);
-});
-
-greatJobOverlay.addEventListener('click', () => {
-  greatJobOverlay.style.opacity = '0';
-  setTimeout(() => {
-    greatJobOverlay.style.display = 'none';
+    secretBtnOverlay.style.display = 'none';
   }, 300);
 });
 //#endregion
